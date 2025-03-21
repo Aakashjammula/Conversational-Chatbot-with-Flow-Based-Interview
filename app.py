@@ -1,4 +1,6 @@
 import streamlit as st
+st.set_page_config(page_title=TITLE, page_icon=PAGE_ICON)
+
 from dotenv import load_dotenv
 import os
 
@@ -6,6 +8,7 @@ from config import TITLE, DESCRIPTION, PAGE_ICON, TREE_PATH
 from chatbot import ChatbotBackend
 from styles import load_css
 from ui_components import display_message, display_chat_history
+
 
 
 # Access via st.secrets

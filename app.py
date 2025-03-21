@@ -8,13 +8,17 @@ from styles import load_css
 from ui_components import display_message, display_chat_history
 
 
-# Get API key from environment or Streamlit secrets
+# Access via st.secrets
+st.write("Google API Key from secrets:", st.secrets["google"]["GOOGLE_API_KEY"])
 
+# Set env var manually if needed
+os.environ["GOOGLE_API_KEY"] = st.secrets["google"]["GOOGLE_API_KEY"]
+
+# Compare (safe check)
 st.write(
-    "Has Google API key been set correctly:",
-    os.environ["GOOGLE_API_KEY"] == st.secrets["google"]["GOOGLE_API_KEY"]
+    "Env var matches secrets:",
+    os.environ.get("GOOGLE_API_KEY") == st.secrets["google"]["GOOGLE_API_KEY"]
 )
-
 
 def initialize_session_state():
     """Initialize session state variables"""

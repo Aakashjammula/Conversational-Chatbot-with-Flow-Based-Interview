@@ -115,6 +115,7 @@ def reset_conversation():
 def main():
     """Main application function"""
     # Set up page configuration
+    from config import TITLE, DESCRIPTION, PAGE_ICON, TREE_PATH  # Import first
     st.set_page_config(page_title=TITLE, page_icon=PAGE_ICON)
     
     # Load and apply CSS

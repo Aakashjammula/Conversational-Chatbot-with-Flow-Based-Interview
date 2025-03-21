@@ -11,16 +11,8 @@ from styles import load_css
 from ui_components import display_message, display_chat_history
 
 # ✅ Access secrets AFTER set_page_config
-st.write("Google API Key from secrets:", st.secrets["google"]["GOOGLE_API_KEY"])
-
-# Set env var manually if needed
+# Hide API key from being displayed
 os.environ["GOOGLE_API_KEY"] = st.secrets["google"]["GOOGLE_API_KEY"]
-
-# Compare (safe check)
-st.write(
-    "Env var matches secrets:",
-    os.environ.get("GOOGLE_API_KEY") == st.secrets["google"]["GOOGLE_API_KEY"]
-)
 
 def initialize_session_state():
     """Initialize session state variables"""
